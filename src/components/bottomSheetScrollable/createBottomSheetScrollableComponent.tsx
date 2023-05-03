@@ -38,6 +38,7 @@ export function createBottomSheetScrollableComponent<T, P>(
       progressViewOffset,
       refreshControl,
       // events
+      onAnimatedScroll,
       onScroll,
       onScrollBeginDrag,
       onScrollEndDrag,
@@ -55,7 +56,8 @@ export function createBottomSheetScrollableComponent<T, P>(
         scrollEventsHandlersHook,
         onScroll,
         onScrollBeginDrag,
-        onScrollEndDrag
+        onScrollEndDrag,
+        onAnimatedScroll,
       );
     const {
       enableContentPanningGesture,
