@@ -47,6 +47,11 @@ export interface BottomSheetScrollableProps {
    * @default useScrollEventsHandlersDefault
    */
   scrollEventsHandlersHook?: ScrollEventsHandlersHookType;
+  
+   /**
+   * Custom override for accessing native scroll method.
+   */
+   onAnimatedScroll?: Pick<Animated.AnimateProps<ScrollViewProps>, 'onScroll'>
 }
 
 export type ScrollableProps<T> =
