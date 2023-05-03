@@ -12,7 +12,8 @@ export const useScrollHandler = (
   useScrollEventsHandlers = useScrollEventsHandlersDefault,
   onScroll?: ScrollableEvent,
   onScrollBeginDrag?: ScrollableEvent,
-  onScrollEndDrag?: ScrollableEvent
+  onScrollEndDrag?: ScrollableEvent,
+  onAnimatedScroll?: any
 ) => {
   // refs
   const scrollableRef = useAnimatedRef<Scrollable>();
@@ -34,6 +35,10 @@ export const useScrollHandler = (
     {
       onScroll: (event, context) => {
         handleOnScroll(event, context);
+
+        if (onAnimatedScroll) {
+          onAnimatedScroll({ nativeEvent: event });
+        }
 
         if (onScroll) {
           runOnJS(onScroll)({ nativeEvent: event });
